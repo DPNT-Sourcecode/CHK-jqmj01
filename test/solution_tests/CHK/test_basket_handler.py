@@ -130,3 +130,18 @@ class TestBasketHandler():
         assert sku_dict == {
             "E": 4
         }
+
+    def test_apply_offers_freebie_not_apply(self):
+        """
+        GIVEN eligibility for a freebie offer
+        WHEN the sku_dict does not contain any of the free skus
+        THEN the offer is not applied
+        """
+
+        sku_dict, total_price = apply_offers({
+            "E": 2
+        })
+
+        assert sku_dict == {
+            "E": 2
+        }
