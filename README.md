@@ -17,9 +17,10 @@
 
 ## 3. Testing
 
-- Run `PYTHONPATH=lib python -m pytest -q test/solution_tests/` to run all test
+- Run `PYTHONPATH=src python -m pytest -q test/solution_tests/` to run all test
 
 ## 4. Linting
 
 - Run `flake8 src/checkout` to check formatting on "checkout" source code
 - Run `mypy src/checkout` to check typing on "checkout" source code
+
