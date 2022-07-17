@@ -1,4 +1,4 @@
-from src.checkout.price_table import price_table
+from checkout.price_table import price_table
 
 
 def get_sku_dict(skus: str) -> dict:
@@ -51,3 +51,4 @@ def get_total_price(sku_dict: dict) -> int:
                 sku_dict[sku] = sku_dict[sku] - 1
 
     return total_price
+
