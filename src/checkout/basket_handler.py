@@ -40,11 +40,12 @@ def get_total_price(sku_dict: dict) -> int:
 
     for sku in sku_dict:
         while sku_dict[sku] > 0:
-            if "special offer" in price_table[sku] and \
-               sku_dict[sku] > price_table[sku]["special_offer"]["quantity"]:
+            if ("special offer" in price_table[sku] and
+               sku_dict[sku] > price_table[sku]["special_offer"]["quantity"]):
                 # if special offer exists and quantity exceeds required
                 total_price += price_table[sku]["special_offer"]["price"]
-                sku_dict[sku] = sku_dict[sku] - price_table[sku]["special_offer"]["quantity"]
+                sku_dict[sku] = (sku_dict[sku] -
+                                 price_table[sku]["special_offer"]["quantity"])
             else:
                 total_price += price_table[sku]["price"]
                 sku_dict[sku] = sku_dict[sku] - 1

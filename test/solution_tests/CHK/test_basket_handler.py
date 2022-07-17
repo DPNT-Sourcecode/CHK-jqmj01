@@ -14,3 +14,10 @@ class TestBasketHandler():
             "C": 2,
             "D": 1
         }
+
+    def get_total_price(self):
+        """
+        GIVEN the get_total_price method
+        WHEN a dict of sku quantities is passed
+        THEN the output sum of the basket quantities
+        """
