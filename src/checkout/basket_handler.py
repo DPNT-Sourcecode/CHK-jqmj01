@@ -1,4 +1,5 @@
 from checkout.price_table import price_table
+from typing import Tuple
 
 
 def get_sku_dict(skus: str) -> dict:
@@ -53,9 +54,9 @@ def get_total_price(sku_dict: dict, total_price: int = 0) -> int:
 
     return total_price
 
-def apply_offers(sku_dict: dict) -> tuple[dict, int]:
+def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
     total_price = 0
-    
+
     for offer in price_table["offers"]:
         if offer["sku"] in sku_dict and sku_dict[offer["sku"]] >= offer["quantity"]:
             if offer["sku"]["offer"]["type"] == "freebie":
@@ -65,5 +66,6 @@ def apply_offers(sku_dict: dict) -> tuple[dict, int]:
                 )
 
     return sku_dict, total_price
+
 
 
