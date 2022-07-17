@@ -42,7 +42,7 @@ def get_total_price(sku_dict: dict, total_price: int = 0) -> int:
     for key, value in list(sku_dict.items()):
         if key in price_table["base_prices"]:
             while sku_dict[key] > 0:
-                total_price += key["price"]
+                total_price += price_table["base_prices"][key]
                 sku_dict[key] = sku_dict[key] - 1
         else:
             return -1
@@ -72,4 +72,5 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                 original_quantity -= offer["quantity"]
 
     return sku_dict, total_price
+
 
