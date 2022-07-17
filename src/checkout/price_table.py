@@ -10,23 +10,36 @@ price_table = {
         {
             "sku": "E",
             "quantity": 2,
-            "offer": {"freebie": "B"}
+            "offer": {
+                "type": "freebie",
+                "offer": "B"
+            }
         },
         {
             "sku": "A",
             "quantity": 5,
-            "offer": {"reduced_price": 200}
+            "offer": {
+                "type": "reduced_price",
+                "offer": 200
+            }
         },
         {
             "sku": "A",
             "quantity": 3,
-            "offer": {"reduced_price": 130}
+            "offer": {
+                "type": "reduced_price",
+                "offer": 130
+            }
         },
         {
             "sku": "B",
             "quantity": 2,
-            "offer": {"reduced_price": 45}
+            "offer": {
+                "type": "reduced_price",
+                "offer": 45
+            }
         },
     ]
 }
+
 
