@@ -29,6 +29,15 @@ price_table = {
     },
     "offers": [  # in order of value to the customer
         {
+            "offer": {
+                "type": "multibuy",
+                "details": {
+                    "sku": ["Z", "Y", "S", "T", "X"],  # decending price order
+                    "quantity": 3
+                }
+            }
+        },
+        {
             "sku": "E",
             "quantity": 2,
             "offer": {
@@ -167,4 +176,5 @@ price_table = {
         },
     ]
 }
+
 
