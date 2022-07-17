@@ -1,5 +1,6 @@
-from src.iwoca_challenges.challenge_1.sum_two_numbers import sum_two_numbers
+from solutions.SUM import sum_solution
 import pytest
+
 
 class TestSum():
     def test_sum(self):
@@ -8,7 +9,7 @@ class TestSum():
         WHEN two positive numbers between 0 and 100 are passed
         THEN the output is the sum of those two numbers
         """
-        assert sum_two_numbers(1, 2) == 3
+        assert sum_solution.compute(1, 2) == 3
 
     def test_sum_raises_exception(self):
         """
@@ -18,11 +19,12 @@ class TestSum():
         """
 
         with pytest.raises(ValueError) as e:
-            res = sum_two_numbers(195, 2)
+            res = sum_solution.compute(195, 2)
 
         assert "num1 must be in the range 0-100" in str(e)
 
         with pytest.raises(ValueError) as e:
-            res = sum_two_numbers(2, -100)
+            res = sum_solution.compute(2, -100)
         
         assert "num2 must be in the range 0-100" in str(e)
+
