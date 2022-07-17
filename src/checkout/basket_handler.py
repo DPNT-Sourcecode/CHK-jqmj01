@@ -53,3 +53,5 @@ def get_total_price(sku_dict: dict) -> int:
             return -1
 
     return total_price
+
+def apply_offers(sku_dict: dict) -> tuple[dict, int]
