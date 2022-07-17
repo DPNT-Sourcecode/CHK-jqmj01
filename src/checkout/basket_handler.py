@@ -53,7 +53,17 @@ def get_total_price(sku_dict: dict, total_price: int = 0) -> int:
 
     return total_price
 
-# def apply_offers(sku_dict: dict) -> tuple[dict, int]:
-#     for key, value in list(price_table.items()):
-        
+def apply_offers(sku_dict: dict) -> tuple[dict, int]:
+    total_price = 0
+    
+    for offer in price_table["offers"]:
+        if offer["sku"] in sku_dict and sku_dict[offer["sku"]] >= offer["quantity"]:
+            if offer["sku"]["offer"]["type"] == "freebie":
+                sku_dict[offer["sku"]["offer"]["offer"]["sku"]] = (
+                    sku_dict[offer["sku"]["offer"]["offer"]["sku"]] - 
+                    sku_dict[offer["sku"]["offer"]["offer"]["quantity"]]
+                )
+
+    return sku_dict, total_price
+
 

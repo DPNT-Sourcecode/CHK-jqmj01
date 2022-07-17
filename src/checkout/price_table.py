@@ -12,7 +12,10 @@ price_table = {
             "quantity": 2,
             "offer": {
                 "type": "freebie",
-                "offer": "B"
+                "offer": {
+                    "sku": "B",
+                    "quantity": 1
+                } 
             }
         },
         {
@@ -41,5 +44,6 @@ price_table = {
         },
     ]
 }
+
 
 
