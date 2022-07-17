@@ -39,4 +39,4 @@ class TestBasketHandler():
         with pytest.raises(ValueError) as e:
             res = get_sku_dict("a")
 
-        assert "Error: SKU not in price table" in str(e)
+        assert "user implementation raised exception" in str(e)

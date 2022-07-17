@@ -18,7 +18,7 @@ def get_sku_dict(skus: str) -> dict:
     # check for invalid skus
     for sku in sku_list:
         if sku not in price_table:
-            raise ValueError("Error: SKU not in price table")
+            raise ValueError("user implementation raised exception")
 
     # count total of each sku in basket
     sku_dict = {}

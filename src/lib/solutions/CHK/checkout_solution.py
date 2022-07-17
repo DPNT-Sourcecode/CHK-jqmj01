@@ -13,17 +13,7 @@ def checkout(skus: str) -> int:
         int: the total price of all the skus
     '''
 
-    # check for invalid skus - looks like the exception needs to be raised here
 
-    # convert to list
-    sku_list = [sku for sku in skus]
-
-    # check for invalid skus
-    for sku in sku_list:
-        if sku not in price_table:
-            raise ValueError("Error: SKU not in price table")
-
-    # continue as I would have done, if the error could be handled in other methods
     skus_dict = get_sku_dict(skus)
     total_price = get_total_price(skus_dict)
     return total_price
