@@ -38,11 +38,7 @@ class TestBasketHandler():
 
         with pytest.raises(ValueError) as e:
             res = get_total_price({
-                "A": 2,
-                "B": 3,
-                "C": 2,
-                "D": 1,
-                "h": 1
+                "a": 1
             })
 
         assert "Error: SKU not in price table" in str(e)
