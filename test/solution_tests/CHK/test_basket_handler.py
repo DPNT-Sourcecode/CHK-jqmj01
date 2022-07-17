@@ -201,3 +201,24 @@ class TestBasketHandler():
         }
 
         assert total_price == 45
+
+    def test_apply_offers_multibuy_multiple(self):
+        """
+        GIVEN eligibility for multiple multibuy offers
+        WHEN the sku_dict is passed to apply_offers
+        THEN the multibuy offers are applied in the most favourable way
+        """
+
+        sku_dict, total_price = apply_offers({
+            "S": 3,
+            "T": 4,
+            "X": 2,
+            "Y": 5,
+            "Z": 2
+        })
+
+        assert sku_dict == {
+            "X": 1
+        }
+
+        assert total_price == 225
