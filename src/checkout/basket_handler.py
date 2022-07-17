@@ -64,8 +64,16 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                     sku_dict[offer["offer"]["details"]["sku"]] - 
                     offer["offer"]["details"]["quantity"]
                 )
+            
+            if offer["offer"]["type"] == "reduced_price":
+                sku_dict[offer["sku"]] = (
+                    sku_dict[offer]["sku"] -
+                    offer["quantity"]
+                )
+                total_price += offer["offer"]["details"]
 
     return sku_dict, total_price
+
 
 
 
