@@ -33,7 +33,8 @@ price_table = {
                 "type": "multibuy",
                 "details": {
                     "sku": ["Z", "Y", "S", "T", "X"],  # decending price order
-                    "quantity": 3
+                    "quantity": 3,
+                    "price": 45
                 }
             }
         },
@@ -176,5 +177,6 @@ price_table = {
         },
     ]
 }
+
 
 

@@ -53,15 +53,20 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
     total_price = 0
 
     for offer in price_table["offers"]:
-        # apply multibuy offers first
 
+        # apply multibuy offers first
         if offer["offer"]["type"] == "multibuy":
             # initialise empty multibuy_dict
             multibuy_dict = {s: 0 for s in offer["offer"]["details"]["skus"]}
-            # fill multibuy_dict from sku_dict
+            # fill multibuy_dict from sku_dict and record total number
+            num_skus = 0
             for key, value in list(sku_dict.items()):
                 if key in multibuy_dict:
                     multibuy_dict[key] = value
+                    num_skus += value
+            # apply offer
+            while num_skus >= offer["offer"][""]
+
 
 
         if offer["sku"] in sku_dict:
@@ -99,4 +104,5 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                 del sku_dict[offer["sku"]]
 
     return sku_dict, total_price
+
 
