@@ -1,13 +1,14 @@
 from src.checkout.price_table import price_table
 
+
 def get_sku_dict(skus: str) -> dict:
     '''Get the total number of each SKU in the basket
-    
-    Args: 
-        skus (string): a string containing the SKUS of all the products in the basket 
-        (assumed to be a list of the SKUS like "AAABBC" for now)
 
-    Returns: 
+    Args:
+        skus (string): a string containing the SKUS of all the products in
+        the basket (assumed to be a list of the SKUS like "AAABBC" for now)
+
+    Returns:
         dict: a dict containing the quantity of each SKU in the string
     '''
 
@@ -23,14 +24,15 @@ def get_sku_dict(skus: str) -> dict:
             sku_dict[sku] = sku_dict[sku] + 1
 
     return sku_dict
-    
+
+
 def get_total_price(sku_dict: dict) -> int:
     '''Get the total price of the SKUS in the input dict
-    
-    Args: 
+
+    Args:
         skus (dict): a dict containing the number of each SKU in the basket
 
-    Returns: 
+    Returns:
         int: the total price of all the SKUs in the basket
     '''
 
@@ -47,5 +49,6 @@ def get_total_price(sku_dict: dict) -> int:
                 sku_dict[sku] = sku_dict[sku] - 1
     
     return total_price
+
 
 
