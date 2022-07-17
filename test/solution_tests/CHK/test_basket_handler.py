@@ -90,3 +90,24 @@ class TestBasketHandler():
         }
 
         assert total_price == 200
+
+    def test_apply_offers_multiple(self):
+        """
+        GIVEN eligibility for multiple discount offers
+        WHEN the fru_dict is passed to apply_offer
+        THEN all discounts are applied in the correct order
+        """
+
+        fru_dict, total_price = apply_offers({
+            "A": 4,
+            "B": 2,
+            "E": 2
+        })
+
+        assert fru_dict == {
+            "A": 1,
+            "B": 1,
+            "E": 2
+        }
+
+        assert total_price == 130
