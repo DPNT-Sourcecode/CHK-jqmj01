@@ -16,7 +16,7 @@ def read_from_config_file_with_default(key, default_value):
 
 def read_properties_file():
     current_dir = os.path.dirname(__file__)
-    properties = load_properties(os.path.join(current_dir, "..", "..", "config", "credentials.config"))
+    properties = load_properties(os.path.join(current_dir, "..", "..", "..", "config", "credentials.config"))
     return properties
 
 
@@ -41,3 +41,4 @@ def load_properties(filepath, sep='=', comment_char='#'):
     except IOError as e:
         print('ERROR: You need to download the credentials.config file before you can run this.')
         exit(1)
+
