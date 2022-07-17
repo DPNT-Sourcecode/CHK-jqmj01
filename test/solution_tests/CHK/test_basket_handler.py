@@ -28,4 +28,18 @@ class TestBasketHandler():
             "C": 2,
             "D": 1
         }) == 240
-            
+
+    def test_get_total_price_exception(self):
+        """
+        GIVEN the get_total_price method
+        WHEN a dict of sku quantities is passed
+        THEN the output sum of the basket quantities
+        """
+
+        assert get_total_price({
+            "A": 2,
+            "B": 3,
+            "C": 2,
+            "D": 1,
+            "h": 1
+        }) == 240

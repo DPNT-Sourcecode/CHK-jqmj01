@@ -39,6 +39,9 @@ def get_total_price(sku_dict: dict) -> int:
     total_price = 0
 
     for sku in sku_dict:
+        if sku not in price_table:
+            raise ValueError("Error: SKU not in price table")
+
         while sku_dict[sku] > 0:
             if ("special offer" in price_table[sku] and
                sku_dict[sku] > price_table[sku]["special_offer"]["quantity"]):
