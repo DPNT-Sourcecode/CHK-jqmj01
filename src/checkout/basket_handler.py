@@ -1,4 +1,4 @@
-from price_table import price_table
+from src.checkout.price_table import price_table
 
 def get_sku_dict(skus: str) -> int:
     '''Get the total number of each SKU in the basket
@@ -12,7 +12,7 @@ def get_sku_dict(skus: str) -> int:
     '''
 
     # convert to list
-    sku_list = skus.split("")
+    sku_list = [sku for sku in skus]
 
     # count total of each sku in basket
     sku_dict = {}
@@ -26,3 +26,4 @@ def get_sku_dict(skus: str) -> int:
     
 
     
+
