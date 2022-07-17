@@ -7,3 +7,4 @@ class TestCheckout():
         assert checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == 965
         assert checkout("ABCCSdaWD") == -1
         assert checkout("ABB&") == -1
+        assert checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH") == 1880
