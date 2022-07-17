@@ -50,9 +50,11 @@ price_table = {
                 "type": "bogof",
                 "details": {
                     "sku": "F",
-                    "quantity": 1
+                    "quantity": 1,
+                    "total_items_needed": 3
                 }
             }
         }
     ]
 }
+
