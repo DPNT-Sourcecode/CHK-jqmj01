@@ -68,6 +68,7 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
             
             # apply offer
             while num_skus >= offer["offer"]["details"]["quantity"]:
+                print(sku_dict)
                 total_price += 45
                 # initialise counter for remaining skus in this instance of the offer
                 remaining_skus = offer["offer"]["details"]["quantity"]
@@ -118,5 +119,6 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
             del sku_dict[key]
 
     return sku_dict, total_price
+
 
 
