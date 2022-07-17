@@ -201,4 +201,3 @@ class TestBasketHandler():
         }
 
         assert total_price == 45
-

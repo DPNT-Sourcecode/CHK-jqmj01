@@ -57,4 +57,3 @@ mock_price_table = {
         }
     ]
 }
-
