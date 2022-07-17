@@ -36,9 +36,11 @@ class TestBasketHandler():
         THEN the output sum takes into account the special offer
         """
 
-        assert get_total_price({
-            "A": 3,
-        }) == 130
+        fru_dict, total_price = apply_offers({
+            "A": 4,
+        })
+
+        assert get_total_price(fru_dict, total_price) == 180
 
     def test_get_total_price_invalid(self):
         """

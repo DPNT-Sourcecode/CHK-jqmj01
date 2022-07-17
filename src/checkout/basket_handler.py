@@ -27,10 +27,12 @@ def get_sku_dict(skus: str) -> dict:
 
 
 def get_total_price(sku_dict: dict, total_price: int = 0) -> int:
-    '''Get the total price of the SKUS in the input dict
+    '''Get the total price of the SKUs in the input dict, after offers have
+    been applied
 
     Args:
-        skus (dict): a dict containing the number of each SKU in the basket
+        skus (dict): a dict containing the number of each SKU in the basket,
+        after offers have been applied
 
     Returns:
         int: the total price of all the SKUs in the basket
@@ -40,15 +42,8 @@ def get_total_price(sku_dict: dict, total_price: int = 0) -> int:
     for key, value in list(sku_dict.items()):
         if key in price_table:
             while sku_dict[key] > 0:
-                if ("special_offer" in price_table[key] and
-                sku_dict[key] >= price_table[key]["special_offer"]["quantity"]):
-                    # if special offer exists and quantity exceeds required
-                    total_price += price_table[key]["special_offer"]["offer"]["reduced_price"]
-                    sku_dict[key] = (sku_dict[key] -
-                                    price_table[key]["special_offer"]["quantity"])
-                else:
-                    total_price += price_table[key]["price"]
-                    sku_dict[key] = sku_dict[key] - 1
+                total_price += price_table[key]["price"]
+                sku_dict[key] = sku_dict[key] - 1
         else:
             return -1
 
