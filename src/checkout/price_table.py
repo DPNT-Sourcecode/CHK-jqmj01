@@ -7,7 +7,7 @@ price_table = {
         "E": 40,
         "F": 10
     },
-    "offers": [
+    "offers": [ # in order of value to the customer
         {
             "sku": "E",
             "quantity": 2,
@@ -43,6 +43,18 @@ price_table = {
                 "details": 45
             }
         },
+        {
+            "sku": "F",
+            "quantity": 2,
+            "offer": {
+                "type": "bogof",
+                "details": {
+                    "sku": "F",
+                    "quantity": 1
+                }
+            }
+        }
     ]
 }
+
 

@@ -72,8 +72,12 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
 
                 original_quantity -= offer["quantity"]
 
+                if offer["offer"]["type"] == "bogof":
+                    original_bogof_quantity = sku_dict[offer["sku"]]
+
             if sku_dict[offer["sku"]] <= 0:
                 del sku_dict[offer["sku"]]
 
     return sku_dict, total_price
+
 
