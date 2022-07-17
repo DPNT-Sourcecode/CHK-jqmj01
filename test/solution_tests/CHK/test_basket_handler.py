@@ -1,4 +1,4 @@
-from checkout.basket_handler import get_sku_dict, get_total_price
+from checkout.basket_handler import get_sku_dict, get_total_price, apply_offers
 import pytest
 
 class TestBasketHandler():
@@ -53,3 +53,20 @@ class TestBasketHandler():
             "C": 2,
             "a": 1
         }) == -1
+
+    def test_apply_offers_freebie(self):
+        """
+        GIVEN eligibility for a freebie offer
+        WHEN the fru_dict is passed to apply_offer
+        THEN the output is the fru_dict minus the freebie 
+        """
+
+        fru_dict, total_price = apply_offers({
+            "B": 2,
+            "E": 2
+        })
+
+        assert fru_dict == {
+            "B": 1,
+            "E": 2
+        }
