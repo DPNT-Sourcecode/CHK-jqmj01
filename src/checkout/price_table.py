@@ -4,7 +4,8 @@ price_table = {
         "B": 30,
         "C": 20,
         "D": 15,
-        "E": 40
+        "E": 40,
+        "F": 10
     },
     "offers": [
         {
@@ -15,7 +16,7 @@ price_table = {
                 "details": {
                     "sku": "B",
                     "quantity": 1
-                } 
+                }
             }
         },
         {
@@ -44,3 +45,4 @@ price_table = {
         },
     ]
 }
+

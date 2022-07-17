@@ -38,7 +38,6 @@ def get_total_price(sku_dict: dict, total_price: int = 0) -> int:
         int: the total price of all the SKUs in the basket
     '''
 
-
     for key, value in list(sku_dict.items()):
         if key in price_table["base_prices"]:
             while sku_dict[key] > 0:
@@ -48,6 +47,7 @@ def get_total_price(sku_dict: dict, total_price: int = 0) -> int:
             return -1
 
     return total_price
+
 
 def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
     total_price = 0
@@ -59,10 +59,10 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                 if offer["offer"]["type"] == "freebie":
                     if offer["offer"]["details"]["sku"] in sku_dict:
                         sku_dict[offer["offer"]["details"]["sku"]] = (
-                            sku_dict[offer["offer"]["details"]["sku"]] - 
+                            sku_dict[offer["offer"]["details"]["sku"]] -
                             offer["offer"]["details"]["quantity"]
                         )
-                
+
                 if offer["offer"]["type"] == "reduced_price":
                     sku_dict[offer["sku"]] = (
                         sku_dict[offer["sku"]] -
@@ -76,3 +76,4 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                 del sku_dict[offer["sku"]]
 
     return sku_dict, total_price
+
