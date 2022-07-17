@@ -65,7 +65,7 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                 if key in multibuy_dict:
                     multibuy_dict[key] = value
                     num_skus += value
-                    
+            
             # apply offer
             while num_skus >= offer["offer"]["details"]["quantity"]:
                 total_price += 45
@@ -115,3 +115,4 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                 del sku_dict[offer["sku"]]
 
     return sku_dict, total_price
+
