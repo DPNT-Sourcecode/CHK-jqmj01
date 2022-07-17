@@ -11,6 +11,7 @@ def hello(friend_name):
     Returns: 
         string: a return message
     '''
-    return "Hello World!"
+    return "Hello, World!"
+
 
 
