@@ -26,4 +26,3 @@ class TestSum():
             res = sum_two_numbers(2, -100)
         
         assert "num2 must be in the range 0-100" in str(e)
-
