@@ -47,7 +47,7 @@ def get_total_price(sku_dict: dict) -> int:
         if key in price_table:
             while sku_dict[key] > 0:
                 if ("special offer" in price_table[key] and
-                sku_dict[key] > price_table[key]["special_offer"]["quantity"]):
+                sku_dict[key] >= price_table[key]["special_offer"]["quantity"]):
                     # if special offer exists and quantity exceeds required
                     total_price += price_table[key]["special_offer"]["price"]
                     sku_dict[key] = (sku_dict[key] -
@@ -59,3 +59,4 @@ def get_total_price(sku_dict: dict) -> int:
             return -1
 
     return total_price
+
