@@ -37,6 +37,18 @@ class TestBasketHandler():
         """
 
         with pytest.raises(ValueError) as e:
-            res = get_sku_dict("a")
+            res = get_sku_dict("aax")
 
-        assert "user implementation raised exception" in str(e)
+        assert "Error: SKU not in price table" in str(e)
+
+    def test_get_sku_dict_lower_case(self):
+        """
+        GIVEN the get_total_price method
+        WHEN a lower case SKU is passed
+        THEN the method counts the lower case SKU as if it were upper case
+        """
+
+        with pytest.raises(ValueError) as e:
+            res = get_sku_dict("AAbC")
+
+        assert "Error: SKU not in price table" in str(e)
