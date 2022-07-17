@@ -3,7 +3,6 @@ from test.solution_tests.CHK.mock_price_table import mock_price_table
 
 import pytest
 
-@patch('mock_price_table', )
 class TestBasketHandler():
     def test_get_sku_dict(self, mocker):
         """
@@ -11,7 +10,7 @@ class TestBasketHandler():
         WHEN two positive numbers between 0 and 100 are passed
         THEN the output is the sum of those two numbers
         """
-        mocker.patch("checkout.price_table", mock_price_table)
+        mocker.patch("checkout.price_table", return_value=mock_price_table)
 
         assert get_sku_dict("AAABBBCCD") == {
             "A": 3,
