@@ -58,8 +58,7 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
             while original_quantity >= offer["quantity"]:
                 if offer["offer"]["type"] == "freebie":
                     if offer["offer"]["details"]["sku"] in sku_dict:
-                        sku_dict[offer["offer"]["details"]["sku"]] = (
-                            sku_dict[offer["offer"]["details"]["sku"]] -
+                        sku_dict[offer["offer"]["details"]["sku"]] -= (
                             offer["offer"]["details"]["quantity"]
                         )
 
@@ -74,6 +73,16 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
 
                 if offer["offer"]["type"] == "bogof":
                     original_bogof_quantity = sku_dict[offer["sku"]]
+                    if (original_bogof_quantity >=
+                       offer["offer"]["details"]["total_items_needed"]):
+                        # check for >= total items needed
+                        original_bogof_quantity -= (
+                            offer["offer"]["details"]["total_items_needed"])
+                        # remove bogof deal quanity from sku_list
+                        sku_dict[offer["offer"]["details"]["sku"]] -= (
+                            offer["offer"]["details"]["quantity"]
+                        )
+                        
 
             if sku_dict[offer["sku"]] <= 0:
                 del sku_dict[offer["sku"]]

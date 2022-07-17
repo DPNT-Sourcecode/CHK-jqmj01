@@ -145,3 +145,18 @@ class TestBasketHandler():
         assert sku_dict == {
             "E": 2
         }
+
+    def test_apply_offers_bogof(self):
+        """
+        GIVEN eligibility for a bogof offer
+        WHEN the sku_dict is passed to apply_offers
+        THEN the bogof freebie is removed
+        """
+
+        sku_dict, total_price = apply_offers({
+            "F": 5
+        })
+
+        assert sku_dict == {
+            "F": 4
+        }
