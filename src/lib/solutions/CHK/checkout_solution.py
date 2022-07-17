@@ -17,4 +17,3 @@ def checkout(skus: str) -> int:
     skus_dict = get_sku_dict(skus)
     total_price = get_total_price(skus_dict)
     return total_price
-

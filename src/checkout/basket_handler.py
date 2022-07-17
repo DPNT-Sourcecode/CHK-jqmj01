@@ -56,6 +56,3 @@ def get_total_price(sku_dict: dict) -> int:
                 sku_dict[key] = sku_dict[key] - 1
 
     return total_price
-
-
-
