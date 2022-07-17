@@ -1,16 +1,18 @@
 from checkout.basket_handler import get_sku_dict, get_total_price, apply_offers
 from test.solution_tests.CHK.mock_price_table import mock_price_table
 
-from mock import patch
 import pytest
 
+@patch('mock_price_table', )
 class TestBasketHandler():
-    def test_get_sku_dict(self):
+    def test_get_sku_dict(self, mocker):
         """
         GIVEN the get_sku_dict method
         WHEN two positive numbers between 0 and 100 are passed
         THEN the output is the sum of those two numbers
         """
+        mocker.patch("checkout.price_table", mock_price_table)
+
         assert get_sku_dict("AAABBBCCD") == {
             "A": 3,
             "B": 3,
