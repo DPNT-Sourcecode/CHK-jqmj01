@@ -1,4 +1,4 @@
-from solutions.SUM import sum_solution
+from src.lib.solutions.SUM import sum_solution
 import pytest
 
 
@@ -27,4 +27,5 @@ class TestSum():
             res = sum_solution.compute(2, -100)
         
         assert "num2 must be in the range 0-100" in str(e)
+
 

@@ -1,4 +1,4 @@
-from checkout.basket_handler import get_sku_dict
+from src.checkout.basket_handler import get_sku_dict
 import pytest
 
 class TestBasketHandler():
@@ -14,3 +14,4 @@ class TestBasketHandler():
             "C": 2,
             "D": 1
         }
+

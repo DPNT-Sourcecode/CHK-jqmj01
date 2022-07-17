@@ -1,5 +1,4 @@
-from lib.solutions.HLO.hello_solution import hello
-from solutions.HLO.hello_solution import hello
+from src.lib.solutions.HLO.hello_solution import hello
 import pytest
 
 
@@ -13,3 +12,4 @@ class TestSum():
         assert hello("John") == "Hello, John!"
 
     
+
