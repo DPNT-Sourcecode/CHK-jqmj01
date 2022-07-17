@@ -38,21 +38,22 @@ def get_total_price(sku_dict: dict) -> int:
 
     total_price = 0
 
-    for sku in list(sku_dict):
-        if sku not in price_table:
+    for key, value in list(sku_dict.items()):
+        if key not in price_table:
             raise ValueError("Error: SKU not in price table")
 
-        while sku_dict[sku] > 0:
-            if ("special offer" in price_table[sku] and
-               sku_dict[sku] > price_table[sku]["special_offer"]["quantity"]):
+        while sku_dict[key] > 0:
+            if ("special offer" in price_table[key] and
+               sku_dict[key] > price_table[key]["special_offer"]["quantity"]):
                 # if special offer exists and quantity exceeds required
-                total_price += price_table[sku]["special_offer"]["price"]
-                sku_dict[sku] = (sku_dict[sku] -
-                                 price_table[sku]["special_offer"]["quantity"])
+                total_price += price_table[key]["special_offer"]["price"]
+                sku_dict[key] = (sku_dict[key] -
+                                 price_table[key]["special_offer"]["quantity"])
             else:
-                total_price += price_table[sku]["price"]
-                sku_dict[sku] = sku_dict[sku] - 1
+                total_price += price_table[key]["price"]
+                sku_dict[key] = sku_dict[key] - 1
 
     return total_price
+
 
 
