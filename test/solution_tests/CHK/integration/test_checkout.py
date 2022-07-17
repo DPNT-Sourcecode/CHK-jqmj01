@@ -5,3 +5,5 @@ class TestCheckout():
 
         assert checkout("ABCDEFABCDEF") == 300
         assert checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == 965
+        assert checkout("ABCCSdaWD") == -1
+        assert checkout("ABB&") == -1
