@@ -27,11 +27,3 @@ class TestSum():
         
         assert "num2 must be in the range 0-100" in str(e)
 
-    def test_sum_wrong_type(self):
-
-        with pytest.raises(TypeError) as e:
-            res = sum_two_numbers("1", "24")
-
-        print(str(e))
-        assert str(e).startswith("TypeError")
-
