@@ -2,15 +2,15 @@ price_table = {
     "A": {
         "price": 50,
         "special_offer": {
-            "quantity": 3,
-            "price": 130
+            "quantity": [5, 3],
+            "offer": {"reduced_price": [200, 130]}
         }
     },
     "B": {
         "price": 30,
         "special_offer": {
             "quantity": 2,
-            "price": 45
+            "offer": {"reduced_price": 45}
         }
     },
     "C": {
@@ -19,4 +19,12 @@ price_table = {
     "D": {
         "price": 15,
     },
+    "E": {
+        "price": 40,
+        "special_offer": {
+            "quantity": 2,
+            "offer": {"freebie": "B"}
+        }
+    }
 }
+
