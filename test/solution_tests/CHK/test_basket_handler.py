@@ -68,13 +68,13 @@ class TestBasketHandler():
 
         assert fru_dict == {
             "B": 0,
-            "E": 2
+            "E": 4
         }
 
-    # def test_apply_offers_discount(self):
-    #     """
-    #     GIVEN eligibility for a discount offer
-    #     WHEN the fru_dict is passed to apply_offer
-    #     THEN the output is the fru_dict minus the discounted item(s) and the total price
-    #     of the discount(s)
-    #     """
+    def test_apply_offers_discount(self):
+        """
+        GIVEN eligibility for a discount offer
+        WHEN the fru_dict is passed to apply_offer
+        THEN the output is the fru_dict minus the discounted item(s) and the total price
+        of the discount(s)
+        """

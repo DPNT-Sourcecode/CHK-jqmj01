@@ -59,7 +59,8 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
 
     for offer in price_table["offers"]:
         if offer["sku"] in sku_dict:
-            while sku_dict[offer["sku"]] >= offer["quantity"]:
+            original_quantity = sku_dict[offer["sku"]]
+            while original_quantity >= offer["quantity"]:
                 if offer["offer"]["type"] == "freebie":
                     sku_dict[offer["offer"]["details"]["sku"]] = (
                         sku_dict[offer["offer"]["details"]["sku"]] - 
@@ -72,5 +73,7 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                         offer["quantity"]
                     )
                     total_price += offer["offer"]["details"]
+
+                original_quantity -= offer["quantity"]
 
     return sku_dict, total_price
