@@ -59,13 +59,14 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
 
     for offer in price_table["offers"]:
         if offer["sku"] in sku_dict and sku_dict[offer["sku"]] >= offer["quantity"]:
-            if offer["sku"]["offer"]["type"] == "freebie":
-                sku_dict[offer["sku"]["offer"]["offer"]["sku"]] = (
-                    sku_dict[offer["sku"]["offer"]["offer"]["sku"]] - 
-                    sku_dict[offer["sku"]["offer"]["offer"]["quantity"]]
+            if offer["offer"]["type"] == "freebie":
+                sku_dict[offer["offer"]["details"]["sku"]] = (
+                    sku_dict[offer["offer"]["details"]["sku"]] - 
+                    offer["offer"]["details"]["quantity"]
                 )
 
     return sku_dict, total_price
+
 
 
 
