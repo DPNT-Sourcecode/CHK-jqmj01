@@ -25,7 +25,7 @@ def get_sku_dict(skus: str) -> dict:
     return sku_dict
 
 
-def get_total_price(sku_dict: dict) -> int:
+def get_total_price(sku_dict: dict, total_price: int = 0) -> int:
     '''Get the total price of the SKUS in the input dict
 
     Args:
@@ -35,7 +35,6 @@ def get_total_price(sku_dict: dict) -> int:
         int: the total price of all the SKUs in the basket
     '''
 
-    total_price = 0
 
     for key, value in list(sku_dict.items()):
         if key in price_table:
@@ -54,4 +53,7 @@ def get_total_price(sku_dict: dict) -> int:
 
     return total_price
 
-def apply_offers(sku_dict: dict) -> tuple[dict, int]
+# def apply_offers(sku_dict: dict) -> tuple[dict, int]:
+#     for key, value in list(price_table.items()):
+        
+
