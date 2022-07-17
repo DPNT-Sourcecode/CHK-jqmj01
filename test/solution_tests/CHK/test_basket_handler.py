@@ -27,13 +27,13 @@ class TestBasketHandler():
             "B": 3,
             "C": 2,
             "D": 1
-        }) == 240
+        }) == 245
 
-    def test_get_sku_dict_exception(self):
+    def test_get_total_price_invalid(self):
         """
         GIVEN the get_total_price method
-        WHEN a dict of sku quantities is passed
-        THEN the output sum of the basket quantities
+        WHEN an invalid SKU is passed to the method
+        THEN the output returns -1
         """
 
         with pytest.raises(ValueError) as e:

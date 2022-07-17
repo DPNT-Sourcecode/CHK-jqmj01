@@ -17,6 +17,6 @@ price_table = {
         "price": 20,
     },
     "D": {
-        "price": 10,
+        "price": 15,
     },
 }
