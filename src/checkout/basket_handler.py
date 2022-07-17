@@ -38,7 +38,7 @@ def get_total_price(sku_dict: dict) -> int:
 
     total_price = 0
 
-    for sku in sku_dict:
+    for sku in list(sku_dict):
         if sku not in price_table:
             raise ValueError("Error: SKU not in price table")
 
@@ -54,4 +54,5 @@ def get_total_price(sku_dict: dict) -> int:
                 sku_dict[sku] = sku_dict[sku] - 1
 
     return total_price
+
 
