@@ -12,4 +12,3 @@ class TestSum():
         assert hello("John") == "Hello, John!"
 
     
-

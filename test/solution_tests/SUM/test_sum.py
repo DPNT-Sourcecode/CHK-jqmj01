@@ -27,5 +27,3 @@ class TestSum():
             res = sum_solution.compute(2, -100)
         
         assert "num2 must be in the range 0-100" in str(e)
-
-

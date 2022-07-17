@@ -14,4 +14,3 @@ class TestBasketHandler():
             "C": 2,
             "D": 1
         }
-
