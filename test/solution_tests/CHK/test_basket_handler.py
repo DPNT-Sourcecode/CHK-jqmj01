@@ -58,15 +58,23 @@ class TestBasketHandler():
         """
         GIVEN eligibility for a freebie offer
         WHEN the fru_dict is passed to apply_offer
-        THEN the output is the fru_dict minus the freebie 
+        THEN the output is the fru_dict minus the freebie(s)
         """
 
         fru_dict, total_price = apply_offers({
             "B": 2,
-            "E": 2
+            "E": 4
         })
 
         assert fru_dict == {
-            "B": 1,
+            "B": 0,
             "E": 2
         }
+
+    # def test_apply_offers_discount(self):
+    #     """
+    #     GIVEN eligibility for a discount offer
+    #     WHEN the fru_dict is passed to apply_offer
+    #     THEN the output is the fru_dict minus the discounted item(s) and the total price
+    #     of the discount(s)
+    #     """
