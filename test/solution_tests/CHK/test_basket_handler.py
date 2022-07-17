@@ -130,5 +130,3 @@ class TestBasketHandler():
         assert sku_dict == {
             "E": 4
         }
-
-
