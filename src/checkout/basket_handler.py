@@ -13,7 +13,7 @@ def get_sku_dict(skus: str) -> dict:
     '''
 
     # convert to list
-    sku_list = [sku.upper() for sku in skus]
+    sku_list = [sku for sku in skus]
 
     # # check for invalid skus
     # for sku in sku_list:

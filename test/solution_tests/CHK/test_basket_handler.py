@@ -40,19 +40,5 @@ class TestBasketHandler():
             "A": 2,
             "B": 3,
             "C": 2,
-            "-": 1
+            "a": 1
         }) == -1
-
-    def test_get_sku_dict_lower_case(self):
-        """
-        GIVEN the get_total_price method
-        WHEN a lower case SKU is passed
-        THEN the method counts the lower case SKU as if it were upper case
-        """
-
-        assert get_sku_dict("AABBbCCD") == {
-            "A": 2,
-            "B": 3,
-            "C": 2,
-            "D": 1
-        }
