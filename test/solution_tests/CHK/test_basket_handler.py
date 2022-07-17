@@ -59,34 +59,34 @@ class TestBasketHandler():
     def test_apply_offers_freebie(self):
         """
         GIVEN eligibility for a freebie offer
-        WHEN the fru_dict is passed to apply_offer
-        THEN the output is the fru_dict minus the freebie(s)
+        WHEN the sku_dict is passed to apply_offer
+        THEN the output is the sku_dict minus the freebie(s)
         """
 
-        fru_dict, total_price = apply_offers({
-            "B": 2,
+        sku_dict, total_price = apply_offers({
+            "B": 3,
             "E": 4
         })
 
-        assert fru_dict == {
-            "B": 0,
+        assert sku_dict == {
+            "B": 1,
             "E": 4
         }
 
     def test_apply_offers_discount(self):
         """
         GIVEN eligibility for a discount offer
-        WHEN the fru_dict is passed to apply_offer
-        THEN the output is the fru_dict minus the discounted item(s) and the total price
+        WHEN the sku_dict is passed to apply_offer
+        THEN the output is the sku_dict minus the discounted item(s) and the total price
         of the discount(s)
         """
 
-        fru_dict, total_price = apply_offers({
+        sku_dict, total_price = apply_offers({
             "A": 6,
             "C": 1
         })
 
-        assert fru_dict == {
+        assert sku_dict == {
             "A": 1,
             "C": 1
         }
@@ -96,21 +96,39 @@ class TestBasketHandler():
     def test_apply_offers_multiple(self):
         """
         GIVEN eligibility for multiple discount offers
-        WHEN the fru_dict is passed to apply_offer
+        WHEN the sku_dict is passed to apply_offer
         THEN all discounts are applied in the correct order
         """
 
-        fru_dict, total_price = apply_offers({
+        sku_dict, total_price = apply_offers({
             "A": 4,
             "B": 2,
             "E": 2
         })
 
-        assert fru_dict == {
+        assert sku_dict == {
             "A": 1,
             "B": 1,
             "E": 2
         }
 
         assert total_price == 130
+
+    def test_apply_offers_handle_non_positives(self):
+        """
+        GIVEN eligibility for an offer
+        WHEN a given sku hits <= 0
+        THEN that sku is removed from the sku_dict
+        """
+
+        sku_dict, total_price = apply_offers({
+            "A": 5,
+            "B": 1,
+            "E": 4
+        })
+
+        assert sku_dict == {
+            "E": 4
+        }
+
 
