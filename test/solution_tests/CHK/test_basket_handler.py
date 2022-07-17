@@ -154,9 +154,22 @@ class TestBasketHandler():
         """
 
         sku_dict, total_price = apply_offers({
-            "F": 5
+            "F": 5,
+            "B": 1
         })
 
         assert sku_dict == {
-            "F": 4
+            "F": 4,
+            "B": 1
+        }
+
+    def test_apply_offers_bogof_multiple(self):
+        sku_dict, total_price = apply_offers({
+            "F": 6,
+            "B": 1
+        })
+
+        assert sku_dict == {
+            "F": 4,
+            "B": 1
         }
