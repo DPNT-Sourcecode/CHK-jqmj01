@@ -53,6 +53,3 @@ class TestBasketHandler():
             "C": 2,
             "a": 1
         }) == -1
-
-
-
