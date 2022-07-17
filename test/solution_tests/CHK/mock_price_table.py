@@ -1,6 +1,6 @@
 mock_price_table = {
     "base_prices": {
-        "A": 50,
+        "A": 10,
         "B": 30,
         "C": 20,
         "D": 15,
@@ -57,3 +57,4 @@ mock_price_table = {
         }
     ]
 }
+
