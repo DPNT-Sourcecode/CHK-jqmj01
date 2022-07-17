@@ -79,5 +79,3 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                 del sku_dict[offer["sku"]]
 
     return sku_dict, total_price
-
-
