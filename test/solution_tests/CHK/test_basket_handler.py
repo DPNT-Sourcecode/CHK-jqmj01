@@ -29,7 +29,7 @@ class TestBasketHandler():
             "D": 1
         }) == 240
 
-    def test_get_total_price_exception(self):
+    def test_get_sku_dict_exception(self):
         """
         GIVEN the get_total_price method
         WHEN a dict of sku quantities is passed
@@ -37,8 +37,6 @@ class TestBasketHandler():
         """
 
         with pytest.raises(ValueError) as e:
-            res = get_total_price({
-                "a": 1
-            })
+            res = get_sku_dict("a")
 
         assert "Error: SKU not in price table" in str(e)
