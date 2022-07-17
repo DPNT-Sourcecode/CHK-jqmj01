@@ -1,4 +1,6 @@
 from checkout.basket_handler import get_sku_dict, get_total_price, apply_offers
+from test.solution_tests.CHK.mock_price_table import mock_price_table
+
 from mock import patch
 import pytest
 
@@ -174,4 +176,3 @@ class TestBasketHandler():
             "F": 4,
             "B": 1
         }
-
