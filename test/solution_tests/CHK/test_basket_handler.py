@@ -48,7 +48,9 @@ class TestBasketHandler():
         THEN the method counts the lower case SKU as if it were upper case
         """
 
-        with pytest.raises(ValueError) as e:
-            res = get_sku_dict("AAbC")
-
-        assert "Error: SKU not in price table" in str(e)
+        assert get_sku_dict("AABBbCCD") == {
+            "A": 2,
+            "B": 3,
+            "C": 2,
+            "D": 1
+        }
