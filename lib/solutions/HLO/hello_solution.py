@@ -6,12 +6,9 @@ def hello(friend_name):
     '''Say hello to the world
     
     Args: 
-        friend_name (string): ignore for now 
+        friend_name (string): the name of the friend to say hello to
 
     Returns: 
-        string: a return message
+        string: a message saying hello to the friend
     '''
-    return "Hello, World!"
-
-
-
+    return f"Hello, {friend_name}!"

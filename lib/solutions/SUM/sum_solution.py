@@ -15,4 +15,3 @@ def compute(x: int, y: int) -> int:
         raise ValueError("num2 must be in the range 0-100")
     
     return x + y
-
