@@ -78,3 +78,15 @@ class TestBasketHandler():
         THEN the output is the fru_dict minus the discounted item(s) and the total price
         of the discount(s)
         """
+
+        fru_dict, total_price = apply_offers({
+            "A": 6,
+            "C": 1
+        })
+
+        assert fru_dict == {
+            "A": 1,
+            "C": 1
+        }
+
+        assert total_price == 200
