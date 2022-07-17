@@ -164,6 +164,12 @@ class TestBasketHandler():
         }
 
     def test_apply_offers_bogof_multiple(self):
+        """
+        GIVEN eligibility for multiple bogof offers
+        WHEN the sku_dict is passed to apply_offers
+        THEN the bogof freebies are removed
+        """
+
         sku_dict, total_price = apply_offers({
             "F": 6,
             "B": 1
@@ -173,4 +179,26 @@ class TestBasketHandler():
             "F": 4,
             "B": 1
         }
+
+    def test_apply_offers_multibuy(self):
+        """
+        GIVEN eligibility for a multibuy offer
+        WHEN the sku_dict is passed to apply_offers
+        THEN the multibuy offer is applied in the most favourable way
+        """
+
+        sku_dict, total_price = apply_offers({
+            "S": 1,
+            "T": 1,
+            "X": 1,
+            "Y": 1,
+            "Z": 1
+        })
+
+        assert sku_dict == {
+            "T": 1,
+            "X": 1
+        }
+
+        assert total_price == 45
 
