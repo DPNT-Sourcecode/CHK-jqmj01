@@ -36,10 +36,12 @@ class TestBasketHandler():
         THEN the output returns -1
         """
 
-        with pytest.raises(ValueError) as e:
-            res = get_sku_dict("aax")
-
-        assert "Error: SKU not in price table" in str(e)
+        assert get_total_price({
+            "A": 2,
+            "B": 3,
+            "C": 2,
+            "-": 1
+        }) == -1
 
     def test_get_sku_dict_lower_case(self):
         """
