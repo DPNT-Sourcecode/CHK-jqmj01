@@ -22,4 +22,4 @@
 ## 4. Linting
 
 - Run `flake8 src/checkout` to check formatting on "checkout" source code
-- Run `mypy src/checkout` to check typing on "checkout" source code
+

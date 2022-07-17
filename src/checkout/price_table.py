@@ -51,6 +51,17 @@ price_table = {
             }
         },
         {
+            "sku": "R",
+            "quantity": 3,
+            "offer": {
+                "type": "freebie",
+                "details": {
+                    "sku": "Q",
+                    "quantity": 1
+                }
+            }
+        },
+        {
             "sku": "F",
             "quantity": 2,
             "offer": {
@@ -59,6 +70,18 @@ price_table = {
                     "sku": "F",
                     "quantity": 1,
                     "total_items_needed": 3
+                }
+            }
+        },
+        {
+            "sku": "U",
+            "quantity": 3,
+            "offer": {
+                "type": "bogof",
+                "details": {
+                    "sku": "U",
+                    "quantity": 1,
+                    "total_items_needed": 4
                 }
             }
         },
@@ -126,8 +149,25 @@ price_table = {
                 "details": 80
             }
         },
+        {
+            "sku": "V",
+            "quantity": 3,
+            "offer": {
+                "type": "reduced_price",
+                "details": 130
+            }
+        },
+        {
+            "sku": "V",
+            "quantity": 2,
+            "offer": {
+                "type": "reduced_price",
+                "details": 90
+            }
+        },
     ]
 }
+
 
 
 
