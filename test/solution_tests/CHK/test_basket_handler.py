@@ -29,11 +29,11 @@ class TestBasketHandler():
             "D": 1
         }) == 115
     
-    def test_get_total_price(self):
+    def test_get_total_price_special_offer(self):
         """
-        GIVEN the get_total_price method
+        GIVEN eligibility of a special offer
         WHEN a dict of sku quantities is passed
-        THEN the output sum of the basket quantities
+        THEN the output sum takes into account the special offer
         """
 
         assert get_total_price({
@@ -53,5 +53,6 @@ class TestBasketHandler():
             "C": 2,
             "a": 1
         }) == -1
+
 
 

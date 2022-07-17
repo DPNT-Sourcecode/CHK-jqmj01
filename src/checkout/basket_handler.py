@@ -15,12 +15,6 @@ def get_sku_dict(skus: str) -> dict:
     # convert to list
     sku_list = [sku for sku in skus]
 
-    # # check for invalid skus
-    # for sku in sku_list:
-    #     if sku not in price_table:
-    #         raise ValueError("Error: SKU not in price table")
-
-    # count total of each sku in basket
     sku_dict = {}
     for sku in sku_list:
         if sku not in sku_dict:
@@ -46,7 +40,7 @@ def get_total_price(sku_dict: dict) -> int:
     for key, value in list(sku_dict.items()):
         if key in price_table:
             while sku_dict[key] > 0:
-                if ("special offer" in price_table[key] and
+                if ("special_offer" in price_table[key] and
                 sku_dict[key] >= price_table[key]["special_offer"]["quantity"]):
                     # if special offer exists and quantity exceeds required
                     total_price += price_table[key]["special_offer"]["price"]
@@ -59,4 +53,5 @@ def get_total_price(sku_dict: dict) -> int:
             return -1
 
     return total_price
+
 
