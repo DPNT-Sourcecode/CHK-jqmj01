@@ -23,11 +23,11 @@ class TestBasketHandler():
         """
 
         assert get_total_price({
-            "A": 2,
-            "B": 3,
-            "C": 2,
+            "A": 1,
+            "B": 1,
+            "C": 1,
             "D": 1
-        }) == 245
+        }) == 115
     
     def test_get_total_price(self):
         """
@@ -53,4 +53,5 @@ class TestBasketHandler():
             "C": 2,
             "a": 1
         }) == -1
+
 
