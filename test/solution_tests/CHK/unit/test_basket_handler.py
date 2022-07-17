@@ -1,5 +1,6 @@
 from checkout.basket_handler import get_sku_dict, get_total_price, apply_offers
 import pytest
+from mock import patch
 
 class TestBasketHandler():
     def test_get_sku_dict(self):
