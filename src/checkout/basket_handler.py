@@ -1,3 +1,4 @@
+from re import L
 from checkout.price_table import price_table
 from typing import Tuple
 
@@ -65,7 +66,14 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                     multibuy_dict[key] = value
                     num_skus += value
             # apply offer
-            while num_skus >= offer["offer"][""]
+            while num_skus >= offer["offer"]["details"]["quantity"]:
+                # initialise counter for remaining skus in this instance of the offer
+                remaining_skus = offer["offer"]["details"]["quantity"]
+                for key, value in list(multibuy_dict.items()):
+                    if value <= remaining_skus:
+                        remaining_skus -= value
+                        multibuy_dict[key] == 0
+
 
 
 
@@ -104,5 +112,6 @@ def apply_offers(sku_dict: dict) -> Tuple[dict, int]:
                 del sku_dict[offer["sku"]]
 
     return sku_dict, total_price
+
 
 
