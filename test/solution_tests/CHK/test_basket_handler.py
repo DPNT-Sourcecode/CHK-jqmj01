@@ -1,4 +1,4 @@
-from src.checkout.basket_handler import get_sku_dict
+from src.checkout.basket_handler import get_sku_dict, get_total_price
 import pytest
 
 class TestBasketHandler():
@@ -15,9 +15,17 @@ class TestBasketHandler():
             "D": 1
         }
 
-    def get_total_price(self):
+    def test_get_total_price(self):
         """
         GIVEN the get_total_price method
         WHEN a dict of sku quantities is passed
         THEN the output sum of the basket quantities
         """
+
+        assert get_total_price({
+            "A": 2,
+            "B": 3,
+            "C": 2,
+            "D": 1
+        }) == 240
+            
