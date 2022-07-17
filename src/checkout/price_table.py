@@ -140,7 +140,7 @@ price_table = {
             "quantity": 2,
             "offer": {
                 "type": "reduced_price",
-                "details": 150
+                "details": 120
             }
         },
         {
@@ -177,3 +177,4 @@ price_table = {
         },
     ]
 }
+
